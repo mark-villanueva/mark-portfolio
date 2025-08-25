@@ -18,6 +18,13 @@
     --main-color: #0ef; 
 }  
 
+/* Prevent horizontal scrolling */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* disables side scroll */
+}
+
 html { 
     font-size: 62.5%; 
     overflow-x: hidden;
@@ -28,9 +35,16 @@ body {
     color: var(--text-color);
 }  
 
-section{ 
-    min-height: 100vh; 
+/* ✅ Only the home section takes full viewport height */
+.home {
+    min-height: 100vh;
     padding: 10rem 9% 2rem;
+}
+
+/* ✅ Other sections shrink to content */
+section { 
+    min-height: auto; 
+    padding: 6rem 9% 2rem;
 }
 
 .header { 
@@ -52,7 +66,6 @@ section{
 }
 
 .isitelogo {
-
     width: 45px;
     margin-right: -400px;
 }
@@ -99,7 +112,7 @@ section{
     font-size: 3.2rem; 
     font-weight: 700;
 } 
- 
+  
 .home-content h3:nth-of-type(2) {  
     margin-bottom: 2rem; 
 } 
@@ -132,7 +145,6 @@ span{
      margin: 3rem 1.5rem 3rem 0; 
      transition: .5s ease;
 } 
-
 
 .social-media a:hover { 
     background: var(--main-color); 
@@ -194,7 +206,6 @@ span{
     align-items: center; 
     flex-wrap: wrap; 
     gap: 2rem; 
-    
 } 
 
 .services {
@@ -337,6 +348,7 @@ span{
     gap: 2.5rem;
     justify-content: center;
     align-items: stretch;
+    padding: 3rem 2rem 2rem;
 }
 
 .portfolio-box {
@@ -468,23 +480,26 @@ span{
     color: #fff;
 }
 
-.footer {
-    background: #181a20;
-    color: #fff;
-    padding: 3rem 2rem 1rem 2rem;
-    font-size: 1.1rem;
-}
+.footer { 
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start;
+    gap: 0.8rem;
+    padding: 2rem 9% 1.2rem 9%;  
+    background: var(--second-bg-color);
+}  
 
 .footer-main {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
 }
 
 .footer-col {
-    flex: 1 1 220px;
+    flex: 1 1 50px;
     min-width: 220px;
 }
 
@@ -500,7 +515,7 @@ span{
 }
 
 .footer-tags {
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
 }
 
 .footer-badge {
@@ -515,10 +530,17 @@ span{
     margin-bottom: 0.5rem;
 }
 
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+}
+
 .footer-icons a {
     color: #fff;
     font-size: 1.5rem;
-    margin-right: 1rem;
+    margin-right: 0;
     transition: color 0.2s;
 }
 
@@ -549,17 +571,11 @@ span{
 hr {
     border: none;
     border-top: 1px solid #333;
-    margin: 1.5rem 0 1rem 0;
+    margin: 0.8rem 0;
 }
 
-.footer-bottom {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    font-size: 1rem;
-    text-align: center;
-    width: 100%;
+.footer-bottom span {
+    letter-spacing: normal;
 }
 
 .footer-links a {
@@ -586,15 +602,6 @@ hr {
         text-align: center;
     }
 }
-
-.footer { 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    flex-wrap: wrap; 
-    padding: 2rem 9%;  
-    background: var(--second-bg-color);
-}  
 
 .footer-text { 
     font-size: 1.6rem;  
@@ -642,7 +649,7 @@ hr {
         display: block;  
         position: fixed;
         top: 2rem;
-        margin-right: -80px;
+        margin-right: -60px;
         z-index: 9999;
         cursor: pointer;
     } 
@@ -696,6 +703,30 @@ hr {
         align-items: center;
         justify-content: center;
         height: 100vh;
+    }
+
+    /* Footer spacing tightening for small screens */
+    .footer {
+        padding: 1.2rem 4% 0.8rem 4%;
+        gap: 0.4rem;
+    }
+    .footer-main {
+        gap: 0.4rem;
+        margin-bottom: 0.3rem;
+    }
+    .footer-tags { 
+        margin-bottom: 0.3rem;
+    }
+    .footer-badge {
+        margin-bottom: 0.3rem;
+        padding: 0.35rem 1rem;
+        font-size: 0.95rem;
+    }
+    .footer-icons { 
+        gap: 1rem;
+    }
+    .footer-bottom {
+        margin-top: 0.2rem;
     }
 } 
 
