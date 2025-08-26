@@ -361,6 +361,7 @@ span{
     flex: 1 1 300px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     overflow: hidden;
     position: relative;
 }
@@ -452,7 +453,7 @@ span{
     text-align: center;
     font-weight: 600;
     font-size: 1.1rem;
-    margin-top: 0.7rem;
+    margin-top: auto; /* pushes button to bottom */
     text-decoration: none;
     transition: background 0.2s;
 }
