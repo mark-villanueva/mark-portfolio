@@ -331,9 +331,26 @@ span{
     padding: 0.8rem 2rem;
     border-radius: 12px;
     font-size: 1.4rem;
-    display: inline-block;
+    display: inline-flex;   /* ✅ better alignment for text + icon */
+    align-items: center;
+    gap: 0.6rem;            /* space between text and icon */
     margin-bottom: 1rem;
+    transition: color 0.3s ease;
 }
+
+.cert-badge i {
+    transition: transform 0.3s ease;
+}
+
+/* Hover effects */
+.cert-badge:hover {
+    color: var(--main-color);   /* arrow + text turn cyan */
+}
+
+.cert-badge:hover i {
+    transform: translateX(5px); /* arrow slides smoothly to the right */
+}
+
 
 @media (max-width: 600px) {
     .certs-container {
@@ -459,9 +476,17 @@ span{
 }
 
 .case-btn:hover {
-    background: var(--main-color, #007bff);
-    color: #fff;
+    color: var(--main-color);
 }
+
+.case-btn i {
+    transition: transform 0.3s ease; 
+}
+
+.case-btn:hover i {
+    transform: translateX(5px); /* arrow slides smoothly to the right */
+}
+
 
 .all-projects-btn {
     background: #222;
