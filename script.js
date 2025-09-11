@@ -66,3 +66,11 @@ const typed = new Typed('.multiple-text', {
     backDelay: 1000, 
     loop: true
 });
+
+// set current year in footer
+(() => {
+    const yearElement = document.getElementById('year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+})();
